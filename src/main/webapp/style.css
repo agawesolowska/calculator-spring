@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+body {
+	background-color: #FFFFBB;
+}
+
+table {
+	background-color: white;
+	border-collapse: collapse;
+	margin: 40px;
+}
+
+th, td {
+	border: 2px solid black;
+	padding: 0.5em;
+}
+
+form {
+	border: 2px solid red;
+	background-color: #EEEEEE;
+	padding: 1em 2em;
+	width: 600px;
+	margin: 2em auto;
+}
+
+.welcome {
+	border: 4px outset blue;
+	background-color: #DDFFEE;
+	padding: 1em 2em;
+	width: 600px;
+	margin: 2em auto;
+}
