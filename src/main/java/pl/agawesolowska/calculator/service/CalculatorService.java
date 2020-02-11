@@ -5,6 +5,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+/**
+ * Service implementing the calculator logic.
+ * 
+ * @author Aga
+ *
+ */
 @Service
 public class CalculatorService implements CalculatorLogic {
 

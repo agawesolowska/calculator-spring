@@ -8,14 +8,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import pl.agawesolowska.calculator.service.CalculatorLogic;
+import pl.agawesolowska.calculator.service.CalculatorService;
 
+/**
+ * The heart of app responding to HTTP queries.
+ * 
+ * @author Aga
+ *
+ */
 @Controller
 @RequestMapping("/calculator")
 public class CalculatorController {
 
 	@Autowired
-	private CalculatorLogic calculatorLogic;
+	private CalculatorService calculatorService;
 
 	@GetMapping
 	public String calculatorGetMethod() {
@@ -25,14 +31,14 @@ public class CalculatorController {
 	@PostMapping
 	public String calculatorPostMethod(Model model, @RequestParam("firstNumber") long firstNumber,
 			@RequestParam("secondNumber") long secondNumber, @RequestParam("action") String action) {
-		long result = calculatorLogic.calculateResult(firstNumber, secondNumber, action);
+		long result = calculatorService.calculateResult(firstNumber, secondNumber, action);
 		model.addAttribute("result", result);
 		return "calculator.jsp";
 	}
 
 	@GetMapping("/history")
 	public String operationsHistory(Model model) {
-		model.addAttribute("listOfActions", calculatorLogic.getOperationsHistory());
+		model.addAttribute("listOfActions", calculatorService.getOperationsHistory());
 		return "history.jsp";
 	}
 
