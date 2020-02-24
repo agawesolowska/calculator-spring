@@ -10,10 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication
-public class GitHubCalculatorSpringApplication {
+public class CalculatorSpringApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GitHubCalculatorSpringApplication.class, args);
+		SpringApplication.run(CalculatorSpringApplication.class, args);
 	}
 
 }

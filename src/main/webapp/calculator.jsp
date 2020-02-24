@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -7,18 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="style.css" />
-<title>Calculator</title>
+<title>Basic Calculator</title>
 </head>
 <body>
-	<h1 style="text-align: center">Calculator</h1>
+	<h1 style="text-align: center">Basic Calculator</h1>
 
 	<form method="post">
-		<input type="text" name="firstNumber" /> <select name="action">
+		<input type="text" name="firstNumber" />
+		<select name="action">
 			<option value="+">+</option>
 			<option value="-">-</option>
 			<option value="*">*</option>
 			<option value="/">/</option>
-		</select> <input type="text" name="secondNumber" />
+		</select>
+		<input type="text" name="secondNumber" />
 		<button>Calculate</button>
 	</form>
 

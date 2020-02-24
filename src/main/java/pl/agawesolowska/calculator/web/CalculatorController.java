@@ -1,5 +1,7 @@
 package pl.agawesolowska.calculator.web;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,21 +27,21 @@ public class CalculatorController {
 
 	@GetMapping
 	public String calculatorGetMethod() {
-		return "calculator.jsp";
+		return "/calculator.jsp";
 	}
 
 	@PostMapping
-	public String calculatorPostMethod(Model model, @RequestParam("firstNumber") long firstNumber,
-			@RequestParam("secondNumber") long secondNumber, @RequestParam("action") String action) {
+	public String calculatorPostMethod(Model model, @NotNull @RequestParam("firstNumber") long firstNumber,
+			@NotNull @RequestParam("secondNumber") long secondNumber, @RequestParam("action") String action) {
 		long result = calculatorService.calculateResult(firstNumber, secondNumber, action);
 		model.addAttribute("result", result);
-		return "calculator.jsp";
+		return "/calculator.jsp";
 	}
 
 	@GetMapping("/history")
 	public String operationsHistory(Model model) {
 		model.addAttribute("listOfActions", calculatorService.getOperationsHistory());
-		return "history.jsp";
+		return "/history.jsp";
 	}
 
 }

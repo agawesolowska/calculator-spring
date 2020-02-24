@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-	background-color: #FFFFBB;
+	background-color: #CBEFEB;
 }
 
 table {
@@ -16,7 +16,7 @@ th, td {
 }
 
 form {
-	border: 2px solid red;
+	border: 2px solid #004080;
 	background-color: #EEEEEE;
 	padding: 1em 2em;
 	width: 600px;
